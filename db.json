@@ -1,0 +1,64 @@
+{
+  "employees": [
+    {
+      "employee_name": "yogesh",
+      "employee_age": "12",
+      "employee_salary": "1111",
+      "department": [
+        {
+          "dept": "Service",
+          "selected": true
+        },
+        {
+          "dept": "supply Chain",
+          "selected": true
+        },
+        {
+          "dept": "Production and Quality Assurance",
+          "selected": true
+        },
+        {
+          "dept": "Finance",
+          "selected": true
+        }
+      ],
+      "id": 1
+    },
+    {
+      "employee_name": "yogesh",
+      "employee_age": "12",
+      "employee_salary": "1111",
+      "department": [],
+      "id": 2
+    },
+    {
+      "employee_name": "yogesh",
+      "employee_age": "12",
+      "employee_salary": "1111",
+      "department": [
+        {
+          "dept": "Service",
+          "selected": true
+        },
+        {
+          "dept": "Finance",
+          "selected": true
+        }
+      ],
+      "id": 3
+    },
+    {
+      "employee_name": "yogesh",
+      "employee_age": "12",
+      "employee_salary": "1111",
+      "department": [
+        {
+          "dept": "Service",
+          "selected": true
+        }
+      ],
+      "statusNow": "confirm",
+      "id": 4
+    }
+  ]
+}
