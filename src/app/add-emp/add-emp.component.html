@@ -1,0 +1,72 @@
+<a routerLink="/"> &lt;back </a>
+
+<div style="border:1px solid ;padding:20px;border-radius: 5px;align-content:flex-end;">
+
+
+  <form [formGroup]="newEmployee" (submit)=addEmp(newEmployee.value)>
+    <label for="employee_name">Name</label>
+    <input formControlName="employee_name" id="employee_name" type="text" /><br>
+
+    <label for="employee_age">employee_age</label>
+    <input formControlName="employee_age" id="employee_age" type="text" /><br>
+
+    <label for="employee_salary">employee_salary</label>
+    <input formControlName="employee_salary" id="employee_salary" type="text" /><br><br>
+    <div style="border:1px solid ;padding:20px;border-radius: 5px;align-content:flex-start;">
+
+
+      <h3>Department</h3>
+      <label *ngFor="let list of departmentList;">
+        <input type="checkbox" (change)="onChange(list.name, $event.target.checked)" value=[list.id]> {{list.name}}<br>
+      </label>
+    </div><br>
+    <div> <label for="statusNow">
+        Status:
+      </label>
+      <select name="statusNow" id="statusNow" formControlName="statusNow">
+        <option *ngFor="let list of statusList"> {{list.name}}</option><br>
+
+      </select>
+
+    </div>
+    <br> <br>
+    <br>
+    <app-my-app (setAddress)="getAddress($event)" adressType="geocode">
+
+    </app-my-app>
+    <b>Address: </b> {{formattedAddress}}
+
+
+    <hr>
+    <div formGroupName="address">
+      <h3>Address</h3>
+
+      <label>
+        Street:
+        <input type="text" formControlName="street">
+      </label>
+
+      <label>
+        City:
+        <input type="text" formControlName="city" value=[this.place.getCity()]>
+      </label>
+
+      <label>
+        State:
+        <input type="text" formControlName="state" value=[this.place.getDistrict()]>
+      </label>
+
+      <label>
+        Zip Code:
+        <input type="text" formControlName="zip" value=[this.place.getPostCode()]>
+      </label>
+    </div>
+
+    <br><br><br>
+
+    <button type="submit" [disabled]="!newEmployee.valid" id="subbit">Add Employee</button>
+  </form>
+</div>
+
+
+
